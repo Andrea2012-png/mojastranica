@@ -1,28 +1,29 @@
 
-  </head>
+<html>
+<head>
+    <title>Mala igra</title>
+</head>
+<body>
+    <h1>Klikni pre nego što istekne vreme!</h1>
+    <button id="dugme" onclick="pobeda()">Klikni me!</button>
+    <p id="poruka"></p>
+    <script>
+        let vreme = 3;
+        const interval = setInterval(() => {
+            vreme--;
+            if (vreme === 0) {
+                document.getElementById("poruka").innerText = "Izgubio si!";
+                clearInterval(interval);
+                document.getElementById("dugme").disabled = true;
+            }
+        }, 1000);
 
-<body style>
-
-    <h1>Pozdrav svjete!</h1>
-    <p>Bok! Ja sam Andrea</p>
-
-    <h2>O meni</h2>
-<h2>Moji ciljevi</h2>
-<p>Želim postati programer i napraviti svoju igru.</p>
-<p>Imam 13 godina što znači da sam 2012 godište,idem 7.b,imam dvije sestre i dva brata,moja najbolja boja je crvena,a najsretniji broj mi je 6.I još nešto najbolje ići ćemo na izlet u Krapinu i ići ćemo se kupati.Moj razred je meni sve od six-seven,pa do "daj mi da prepišem,moji prijatelji su meni baš dragi.Zanimljivost o meni je da niko ne zna da ja ostanem budna do 00:00,moje omiljene serije su U DOBRU I ZLU i KUMOVI (dat ću vam link dolje o tim serijama),danas sam odgovarala geografiju i saznala sam dvije ocjene,tako volim ovaj svoj život napokon ću postati progamerka i napraviti ću jednu igru mozda ne danas možda sutra neznam sada baš to.</p>
-<a href="https://www.youtube.com/results?search_query=U+dobru+i+zlu" target="_blank">
-U dobru i zlu
-<a href="https://www.youtube.com/results?search_query=Kumovi+serija" target="_blank">
-Kumovi
-    <h2>Moji hobiji</h2>
-    <ul style="list-style: none;">
-        <li>🎮 Igranje</li>
-        <li>⚽ Sport</li>
-        <li>🎵 Glazba</li>
-    </ul>
-<a href="https://os-ifilipovic-velikakopanica.skole.hr">
-
-    <h2>Kontakt</h2>
-
+        function pobeda() {
+            clearInterval(interval);
+            document.getElementById("poruka").innerText = "Bravo, pobedio si!";
+            document.getElementById("dugme").disabled = true;
+        }
+    </script>
 </body>
-</html>            
+</html>
+            
